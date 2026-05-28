@@ -1,8 +1,8 @@
-import streamlit as list_app  # 스트림릿 라이브러리 가져오기
+import streamlit as st  # <- 여기를 정확히 st로 가져옵니다!
 import random
 
 # 1. 앱 제목 설정
-st.title("🍚 오늘 뭐 먹지? (초간단 메뉴 추천기)")
+st.title("🍚 오늘 뭐 먹지?")
 st.write("결정장애가 온 당신을 위해 준비했습니다. 버튼을 눌러보세요!")
 
 # 2. 음식 메뉴 리스트

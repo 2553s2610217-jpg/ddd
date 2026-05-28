@@ -1,3 +1,3 @@
 import streamlit as st
 st. title('배고프다')
-st. write('집가고싶다')
+st. write('매점')

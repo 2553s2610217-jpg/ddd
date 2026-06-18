@@ -4,3 +4,6 @@ requests
 streamlit
 streamlit
 streamlit
+streamlit
+streamlit-lottie
+requests

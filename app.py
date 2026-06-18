@@ -1,7 +1,7 @@
 import streamlit as st
 import datetime
 
-# 1. 페이지 기본 설정 (가장 상단에 위치해야 합니다)
+# 1. 페이지 기본 설정
 st.set_page_config(
     page_title="스마트 보건실 가이드",
     page_icon="🏥",
@@ -37,11 +37,10 @@ st.markdown("<h1 class='main-title'>🏥 스마트 보건실 안내 시스템</h
 st.markdown("<p class='sub-title'>안전하고 건강한 하루를 위해 보건실 이용 방법을 안내해 드립니다.</p>", unsafe_allow_html=True)
 st.divider()
 
-# 4. 실시간 보건실 현황 안내 (심플 대시보드)
+# 4. 실시간 보건실 현황 안내
 col1, col2 = st.columns(2)
 with col1:
     current_time = datetime.datetime.now().time()
-    # 대략적인 운영 시간 체크 (09:00 ~ 17:00)
     if datetime.time(9, 0) <= current_time <= datetime.time(17, 0):
         st.success("🟢 현재 보건실 운영 중 (이용 가능)")
     else:
@@ -50,7 +49,7 @@ with col1:
 with col2:
     st.info("🕒 운영 시간: 평일 09:00 ~ 17:00")
 
-st.space = st.write("") # 간격 조절
+st.write("") # 간격 조절
 
 # 5. 핵심 기능: 증상별 방문 가이드 & 기능 설명
 st.subheader("🩺 증상별 맞춤 이용 가이드")
@@ -75,4 +74,24 @@ with tab2:
         <p><strong>방문 전 행동:</strong> 최근 4시간 이내에 다른 해열진통제를 복용했는지 기억해 주세요. (중복 복용 방지)</p>
         <p><strong>보건실 처치:</strong> 체온 측정, 증상에 따른 해열진통제 투약, 필요 시 냉찜질</p>
     </div>
-    """, unsafe_
+    """, unsafe_allow_html=True)
+
+with tab3:
+    st.markdown("""
+    <div class='info-box'>
+        <h4>🤢 복통 및 소화불량 발생 시</h4>
+        <p><strong>방문 전 행동:</strong> 마지막으로 식사한 시간과 메뉴를 생각하고 와주세요. 공복 상태인지 확인이 필요합니다.</p>
+        <p><strong>보건실 처치:</strong> 소화제나 위장약 처방 후 필요시 침상 안정을 병행할 수 있습니다.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with tab4:
+    st.markdown("""
+    <div class='info-box'>
+        <h4>🏃 침상 안정 및 휴식이 필요할 때</h4>
+        <p><strong>이용 규칙:</strong> 보건선생님의 확인 후 최대 1시간 동안 침상을 이용할 수 있습니다.</p>
+        <p><strong>주의사항:</strong> 휴식 중에는 스마트폰 사용을 자제하고 편안하게 안정을 취해주세요.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+st.divider()
